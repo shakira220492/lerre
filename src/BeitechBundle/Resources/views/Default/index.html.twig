@@ -1,0 +1,167 @@
+{% extends '::layout.html.twig' %}
+{% block body %}
+    {{ parent() }}
+
+    <style>
+        div#logInFrame {
+            background-color: green;
+            width: 35px;
+            height: 35px;
+        }
+
+        div#categoriesIdFrame {
+            top: 0px;
+            left: 0px;
+            background-color: pink;
+            width: 35px;
+            height: 35px;
+        }
+
+        div#categoriesId {
+            z-index: 1;
+        }
+
+        div#categoriesId {
+            top: 35px;
+            background-color: red;
+        }
+
+        div#searchEngineId {
+            top: 0px;
+            background-color: red;
+        }
+    </style>
+
+    <body id="chantaje" style="background-color: pink; width: 100%; height: 100%;">
+        <div
+            style="background-color: green; 
+            {#            height: 100%;#}
+            position: absolute;
+            right: 0px;
+            left: 250px;
+            top: 0px;
+            bottom: 0px;
+            overflow-y: scroll;">
+            {{ include('BeitechBundle:Default:presentationProduct.html.twig', {
+                    form_amount_visits_form_ajax: amount_visits_form_ajax,
+                    id_amount_visits_form_ajax: 'amount-visits-ajax'
+            }) }}
+        </div>
+
+        <div
+            id="searchEngineId"
+            style="background-color: red; 
+            height: 35px; 
+            width: 250px; 
+            {#                top: 0px;#}
+            left: 0px;
+            position: absolute;">
+            {{ include('BeitechBundle:Default:searchEngine.html.twig', {
+                            form_increase_amount_view_video_form_ajax: increase_amount_view_video_form_ajax,
+                            id_increase_amount_view_video_form_ajax: 'increase-amount-view-video-ajax'
+                        }) }}
+        </div>
+
+        <div
+            id="categoriesId"
+            style="
+            {#             display: none;#}
+            background-color: white; 
+            position: absolute;
+            {#             height: 50%; #}
+            width: 250px; 
+            {#             top: 35px;#}
+            left: 0px;
+            bottom: 0px;
+            overflow-y: scroll;">
+            {{ include('BeitechBundle:Default:categories.html.twig') }}
+        </div>
+
+        <div id='rightToolBar'
+             style="{#background-color: yellow;#}
+             position: absolute;
+             right: 0px;
+             width: 90px;
+             top: 0px;
+             bottom: 0px;">
+            {{ include('BeitechBundle:Default:rightToolBar.html.twig') }}
+        </div>
+
+        <div id='rightFormBar'
+             style='{#background-color: green;#}
+             position: absolute;
+             right: 100px;
+             {#width: 800px;#}
+             left: 250px;
+             top: 0px;
+             bottom: 0px;'>
+            {{ include('BeitechBundle:Default:rightFormBar.html.twig', {
+                    form1: introduce_user_data_form_ajax,
+                    id1: 'introduce-user-data-ajax',
+                    form2: login_user_data_form_ajax,
+                    id2: 'login-user-data-ajax',
+                    form3: upload_product_form_ajax,
+                    id3: 'upload-product-ajax',
+                    form4: introduce_setlist_data_form_ajax,
+                    id4: 'introduce-setlist-data-ajax',
+                    form5: add_product_setlist_form_ajax,
+                    id5: 'add-product-setlist-ajax',
+                    form6: upload_keywords_form_ajax,
+                    id6: 'upload-keywords-ajax',
+                    form7: update_product_form_ajax,
+                    id7: 'update-product-ajax'
+            }) }}
+        </div>
+
+        <div id="logInFrame">
+            <div id="logInForm" 
+                 style="
+                 width: 0px;
+                 top: 0px;
+                 right: 0px;
+                 bottom: 0px;
+                 z-index: 2;
+                 position: absolute;
+                 transition-property: all;
+                 transition-duration: 0.5s;
+                 ">
+                {{ include('BeitechBundle:Default:logIn.html.twig', {
+
+                }) }}
+            </div>
+        </div>
+
+
+        {#
+                
+                <div id="uploadVideo"
+                     style="
+                     width: 350px;
+                     right: 0px;
+                     top: 0px;
+                     bottom: 0px;
+                     position: absolute;">
+                    {{ include('BeitechBundle:Default:uploadVideo.html.twig') }}
+                </div>
+                
+                <div id="donateToThisArtistForm"
+                     style="
+                     width: 300px;
+                     right: 0px;
+                     top: 0px;
+                     bottom: 0px;
+                     position: absolute;">
+                    {{ include('BeitechBundle:Default:donateThisArtist.html.twig') }}
+                </div>
+                
+                <div id="addToList"
+                     style="
+                     width: 300px;
+                     right: 0px;
+                     top: 0px;
+                     bottom: 0px;
+                     position: absolute;">
+                    {{ include('BeitechBundle:Default:addToList.html.twig') }}
+                </div>#}
+    </body>
+{% endblock %}

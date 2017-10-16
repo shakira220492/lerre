@@ -1,0 +1,80 @@
+<style>
+    div.sessionManage {
+        -webkit-animation: logInButtonAnimacion 10s;
+        animation: primeraAnimacion 10s linear 0s infinite alternate;
+    }
+
+    @-webkit-keyframes logInButtonAnimacion{
+        0%{background-color: #1ab7ea;}
+        25%{background-color: yellow;}
+        50%{background-color: blue;}
+        100%{background-color: green;}
+    }
+</style>
+
+<div 
+    class="sessionManage"
+    id="toBig" 
+    style="
+    z-index: 3; 
+    width: 50px; 
+    height: 50px; 
+    {#     background-color: red; #}
+    top: 0px; 
+    right: 20px; 
+    position: absolute;
+    opacity: 0.7;" 
+    onclick="highlightlogInForm();">
+</div>
+
+{#<div 
+    class="sessionManage"
+    id="toLittle" 
+    style="
+    z-index: 3; 
+    width: 50px; 
+    height: 50px; 
+    top: 400px; 
+    right: 20px; 
+    position: absolute;
+    opacity: 0.7;" 
+    onclick="desactivateLeftToolBar(), highlightlogInForm();">
+</div>#}
+    
+<script>
+    function highlightlogInForm() {
+        document.getElementById('addToListForm').style.zIndex = 1;
+        document.getElementById('donateToThisArtistForm').style.zIndex = 1;
+        document.getElementById('logInForm').style.zIndex = 2;
+        document.getElementById('uploadVideoForm').style.zIndex = 1;
+        
+        document.getElementById('addToListFormBackGround').style.zIndex = 1;
+        document.getElementById('donateToThisArtistFormBackGround').style.zIndex = 1;
+        document.getElementById('logInFormBackGround').style.zIndex = 2;
+        document.getElementById('uploadVideoFormBackGround').style.zIndex = 1;
+    
+        if (document.getElementById('logInForm').style.opacity == 1)
+        {
+            document.getElementById('addToListForm').style.opacity = 0;
+            document.getElementById('donateToThisArtistForm').style.opacity = 0;
+            document.getElementById('logInForm').style.opacity = 0;
+            document.getElementById('uploadVideoForm').style.opacity = 0;
+            
+            document.getElementById('addToListFormBackGround').style.opacity = 0;
+            document.getElementById('donateToThisArtistFormBackGround').style.opacity = 0;
+            document.getElementById('logInFormBackGround').style.opacity = 0;
+            document.getElementById('uploadVideoFormBackGround').style.opacity = 0;
+        } else
+        {
+            document.getElementById('addToListForm').style.opacity = 0;
+            document.getElementById('donateToThisArtistForm').style.opacity = 0;
+            document.getElementById('logInForm').style.opacity = 1;
+            document.getElementById('uploadVideoForm').style.opacity = 0;
+            
+            document.getElementById('addToListFormBackGround').style.opacity = 0;
+            document.getElementById('donateToThisArtistFormBackGround').style.opacity = 0;
+            document.getElementById('logInFormBackGround').style.opacity = 0.3;
+            document.getElementById('uploadVideoFormBackGround').style.opacity = 0;
+        }
+    }
+</script>

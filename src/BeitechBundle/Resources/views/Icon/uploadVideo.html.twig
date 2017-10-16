@@ -1,0 +1,49 @@
+<div id="uploadVideoIcon"
+     style="
+     position: absolute;
+{#     background-color: red;#}
+     right: 20px;
+     top: 100px;
+     width: 50px;
+     height: 50px;"
+     onclick="highlightUploadVideoForm();">
+    <img src="files/images/icons/upload video.png" alt="Mountain View" style="width:50px; height:50px; opacity: 0.9;">
+</div>
+     
+<script>
+    function highlightUploadVideoForm() {
+        document.getElementById('addToListForm').style.zIndex = 1;
+        document.getElementById('donateToThisArtistForm').style.zIndex = 1;
+        document.getElementById('logInForm').style.zIndex = 1;
+        document.getElementById('uploadVideoForm').style.zIndex = 2;
+        
+        document.getElementById('addToListFormBackGround').style.zIndex = 1;
+        document.getElementById('donateToThisArtistFormBackGround').style.zIndex = 1;
+        document.getElementById('logInFormBackGround').style.zIndex = 1;
+        document.getElementById('uploadVideoFormBackGround').style.zIndex = 2;
+        
+        if (document.getElementById('uploadVideoForm').style.opacity == 1)
+        {
+            document.getElementById('addToListForm').style.opacity = 0;
+            document.getElementById('donateToThisArtistForm').style.opacity = 0;
+            document.getElementById('logInForm').style.opacity = 0;
+            document.getElementById('uploadVideoForm').style.opacity = 0;
+            
+            document.getElementById('addToListFormBackGround').style.opacity = 0;
+            document.getElementById('donateToThisArtistFormBackGround').style.opacity = 0;
+            document.getElementById('logInFormBackGround').style.opacity = 0;
+            document.getElementById('uploadVideoFormBackGround').style.opacity = 0;
+        } else
+        {
+            document.getElementById('addToListForm').style.opacity = 0;
+            document.getElementById('donateToThisArtistForm').style.opacity = 0;
+            document.getElementById('logInForm').style.opacity = 0;
+            document.getElementById('uploadVideoForm').style.opacity = 1;
+            
+            document.getElementById('addToListFormBackGround').style.opacity = 0;
+            document.getElementById('donateToThisArtistFormBackGround').style.opacity = 0;
+            document.getElementById('logInFormBackGround').style.opacity = 0;
+            document.getElementById('uploadVideoFormBackGround').style.opacity = 0.3;
+        }
+    }
+</script>
